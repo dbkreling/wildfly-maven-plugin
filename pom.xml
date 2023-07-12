@@ -93,6 +93,12 @@
         <version.org.jboss.logmanager>2.1.19.Final</version.org.jboss.logmanager>
         <version.org.wildfly.checkstyle-config>1.0.8.Final</version.org.wildfly.checkstyle-config>
         <version.org.wildfly.common.wildfly-common>1.6.0.Final</version.org.wildfly.common.wildfly-common>
+        <version.org.wildfly.common.wildfly-common>1.5.1.Final-redhat-00001</version.org.wildfly.common.wildfly-common>
+        <version.org.wildfly.client.wildfly-client-config>1.0.1.Final-redhat-00001</version.org.wildfly.client.wildfly-client-config>
+        <version.org.wildfly.security.wildfly-elytron-sasl-auth-util>1.20.2.Final</version.org.wildfly.security.wildfly-elytron-sasl-auth-util>
+        <version.org.slf4j.jcl-over-slf4j>1.7.32.redhat-00001</version.org.slf4j.jcl-over-slf4j>
+        <version.org.apache.maven.shared.maven-artifact-transfer>0.9.1</version.org.apache.maven.shared.maven-artifact-transfer>
+        <version.com.ethlo.time.itu>1.7.0</version.com.ethlo.time.itu>
         <!-- This version property is also retrieved by plugin at runtime to resolve CLI artifact -->
         <version.org.wildfly.core>21.0.2.Final-redhat-00001</version.org.wildfly.core>
         <version.org.wildfly>27.0.1.Final</version.org.wildfly>
@@ -383,11 +389,23 @@
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-plugin-core</artifactId>
                 <version>${project.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.maven.shared</groupId>
+                        <artifactId>maven-artifact-transfer</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.wildfly.channel</groupId>
                 <artifactId>channel-core</artifactId>
                 <version>${version.org.wildfly.channel}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.ethlo.time</groupId>
+                        <artifactId>itu</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.wildfly.channel</groupId>
@@ -417,6 +435,20 @@
                 <groupId>org.wildfly.core</groupId>
                 <artifactId>wildfly-protocol</artifactId>
                 <version>${version.org.wildfly.core}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jcl-over-slf4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.wildfly.client</groupId>
+                        <artifactId>wildfly-client-config</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.wildfly.security</groupId>
+                        <artifactId>wildfly-elytron-sasl-auth-util</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.wildfly.prospero</groupId>
@@ -455,6 +487,12 @@
                 <groupId>org.jboss.logmanager</groupId>
                 <artifactId>jboss-logmanager</artifactId>
                 <version>${version.org.jboss.logmanager}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.wildfly.common</groupId>
+                        <artifactId>wildfly-common</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
