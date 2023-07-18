@@ -96,6 +96,7 @@
         <version.org.wildfly.client.wildfly-client-config>1.0.1.Final-redhat-00001</version.org.wildfly.client.wildfly-client-config>
         <version.org.wildfly.security.wildfly-elytron-sasl-auth-util>2.2.1.Final-redhat-00001</version.org.wildfly.security.wildfly-elytron-sasl-auth-util>
         <version.org.slf4j.jcl-over-slf4j>2.0.7.redhat-00002</version.org.slf4j.jcl-over-slf4j>
+        <version.com.ethlo.time.itu>1.7.0.redhat-00002</version.com.ethlo.time.itu>
         <!-- This version property is also retrieved by plugin at runtime to resolve CLI artifact -->
         <version.org.wildfly.core>21.0.2.Final-redhat-00001</version.org.wildfly.core>
         <version.org.wildfly>27.0.1.Final</version.org.wildfly>
@@ -107,7 +108,7 @@
         <version.org.apache.maven.plugin-testing.maven-plugin-testing-harness>3.3.0
         </version.org.apache.maven.plugin-testing.maven-plugin-testing-harness>
         <version.org.apache.maven.plugin-tools>3.7.0</version.org.apache.maven.plugin-tools>
-        <version.org.apache.maven.shared>0.9.1</version.org.apache.maven.shared>
+        <version.org.apache.maven.shared>0.9.1.redhat-00001</version.org.apache.maven.shared>
         <version.org.apache.maven.resolver>1.9.6</version.org.apache.maven.resolver>
         <!-- maven dependencies only required by tests -->
         <version.org.apache.maven.wagon>3.5.3</version.org.apache.maven.wagon>
@@ -250,6 +251,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.ethlo.time</groupId>
+                <artifactId>itu</artifactId>
+                <version>${version.com.ethlo.time.itu}</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
                 <version>${version.javax.inject.javax.inject}</version>
@@ -391,11 +397,23 @@
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-plugin-core</artifactId>
                 <version>${project.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.maven.shared</groupId>
+                        <artifactId>maven-artifact-transfer</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.wildfly.channel</groupId>
                 <artifactId>channel-core</artifactId>
                 <version>${version.org.wildfly.channel}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.ethlo.time</groupId>
+                        <artifactId>itu</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.wildfly.channel</groupId>
