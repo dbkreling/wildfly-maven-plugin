@@ -118,6 +118,10 @@
     </reporting>
 
     <dependencies>
+        <dependency>
+            <groupId>com.ethlo.time</groupId>
+            <artifactId>itu</artifactId>
+        </dependency>
         <!-- Needed my maven-core -->
         <dependency>
             <groupId>javax.inject</groupId>
@@ -142,6 +146,10 @@
             <!-- Only used at compile-time -->
             <scope>provided</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-artifact-transfer</artifactId>
         </dependency>
         <dependency>
             <groupId>org.jboss.galleon</groupId>
