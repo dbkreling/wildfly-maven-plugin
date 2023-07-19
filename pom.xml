@@ -96,8 +96,8 @@
         <version.org.wildfly.client.wildfly-client-config>1.0.1.Final-redhat-00001</version.org.wildfly.client.wildfly-client-config>
         <version.org.wildfly.security.wildfly-elytron-sasl-auth-util>2.2.1.Final-redhat-00001</version.org.wildfly.security.wildfly-elytron-sasl-auth-util>
         <version.org.slf4j.jcl-over-slf4j>2.0.7.redhat-00002</version.org.slf4j.jcl-over-slf4j>
-        <version.org.apache.maven.shared.maven-artifact-transfer>0.9.1</version.org.apache.maven.shared.maven-artifact-transfer>
-        <version.com.ethlo.time.itu>1.7.0</version.com.ethlo.time.itu>
+        <version.org.apache.maven.shared.maven-artifact-transfer>0.9.1.redhat-00001</version.org.apache.maven.shared.maven-artifact-transfer>
+        <version.com.ethlo.time.itu>1.7.0.redhat-00002</version.com.ethlo.time.itu>
         <!-- This version property is also retrieved by plugin at runtime to resolve CLI artifact -->
         <version.org.wildfly.core>21.0.2.Final-redhat-00001</version.org.wildfly.core>
         <version.org.wildfly>27.0.1.Final</version.org.wildfly>
